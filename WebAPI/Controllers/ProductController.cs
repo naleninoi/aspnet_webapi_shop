@@ -19,9 +19,15 @@ public class ProductController : ControllerBase
         _productRepository = productRepository;
     }
     
-    [HttpGet(Name = "Products")]
-    public Task<List<Product>> GetAll()
+    [HttpGet("GetAll")]
+    public async Task<List<Product>> GetAll()
     {
-        return _productRepository.GetProducts();
+        return await _productRepository.GetProducts();
+    }
+    
+    [HttpGet("GetById")]
+    public async Task<Product?> GetById(int id)
+    {
+        return await _productRepository.GetById(id);
     }
 }

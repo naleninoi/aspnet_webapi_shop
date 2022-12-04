@@ -6,7 +6,7 @@ namespace DataAccess.Repository;
 
 public class ProductRepository : IProductRepository
 {
-    private AppDbContext _context;
+    private readonly AppDbContext _context;
 
     public ProductRepository(AppDbContext context)
     {
